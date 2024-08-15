@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gameboy Art</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Global variables */
+      :root {
+        --gameboy-light-gray: #cdcdcd;
+        --gameboy-dark-gray: #706a7f;
+        --gameboy-red: #7e194f;
+        --gameboy-black: #0e0223;
+      }
+
+      /* Vertically and horizontally center all items on the page */
+      body {
+        margin: 0 auto;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #gameboy {
+        height: 500px;
+        width: 325px;
+        background-color: var(--gameboy-light-gray);
+        border-radius: 10px 10px 80px 10px;
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.4), inset 5px 5px 5px #d4dbdb;
+      }
+
+      #gameboy * {
+        position: relative;
+      }
+
+      #screen-container {
+        height: 205px;
+        width: 270px;
+        background-color: var(--gameboy-dark-gray);
+        /*   position: relative; */
+        top: 40px;
+        left: 27px;
+        border-radius: 5px 5px 40px 5px;
+        box-shadow: inset 3px 3px 3px 1px #56564b, 0 0 3px black;
+      }
+
+      /* SCREEN HEADER */
+      #header__stripes::before {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 250px;
+        left: 10px;
+        top: 7px;
+        border-top: 3px solid var(--gameboy-red);
+        border-bottom: 3px solid var(--gameboy-black);
+      }
+
+      #header__stripes::after {
+        position: absolute;
+        content: '';
+        height: 20px;
+        width: 150px;
+        left: 83px;
+        background-color: var(--gameboy-dark-gray);
+      }
+
+      #screen-battery,
+      #header__screen-text {
+        /*   position: relative; */
+        font-size: 8px;
+        font-family: sans-serif;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      #header__screen-text {
+        top: 7px;
+        left: 90px;
+      }
+
+      #screen-battery {
+        top: 90px;
+        left: 15px;
+      }
+
+      #screen-battery::before {
+        position: absolute;
+        content: '';
+        height: 10px;
+        width: 10px;
+        background-color: black;
+        border-radius: 50%;
+        top: -20px;
+        left: 10px;
+      }
+
+      #screen-display {
+        /*   position: relative; */
+        width: 160px;
+        height: 160px;
+        top: 7px;
+        left: 67px;
+        background-color: #808518;
+        box-shadow: inset 0 3px 3px 3px #815f07;
+      }
+
+      /* CONSOLE LOGO TEXT */
+      #console-title {
+        /*   position: relative; */
+        top: 40px;
+      }
+
+      #console-title > img {
+        height: 40px;
+        filter: brightness(0);
+      }
+
+      #gameboy-text {
+        /*   position: relative; */
+        font-family: 'Cabin';
+        font-size: 16px;
+        top: -15px;
+      }
+
+      /* DPAD */
+
+      #dpad {
+        /*   position: relative; */
+        top: 50px;
+        left: 30px;
+      }
+
+      .dpad__button {
+        height: 30px;
+        width: 30px;
+        background-color: var(--gameboy-black);
+        /*   position: relative; */
+      }
+
+      #dpad__top {
+        border-radius: 3px 3px 0 0;
+      }
+
+      #dpad__left {
+        left: -30px;
+        border-radius: 3px 0 0 3px;
+      }
+
+      #dpad__right {
+        left: 30px;
+        top: -60px;
+        border-radius: 0 3px 3px 0;
+      }
+
+      #dpad__bottom {
+        top: -60px;
+        border-radius: 0 0 3px 3px;
+      }
+
+      #dpad__center {
+        top: -30px;
+      }
+
+      /* PLAY BUTTONS */
+      #play-buttons {
+        display: flex;
+        flex-direction: row-reverse;
+        /*   position: relative; */
+        top: -30px;
+        left: 35px;
+        transform: rotate(330deg);
+      }
+
+      .play__button {
+        padding: 10px;
+        margin: 15px;
+        font-family: 'Cabin';
+        font-size: 12px;
+      }
+
+      .play__button::before {
+        position: absolute;
+        content: '';
+        height: 40px;
+        width: 40px;
+        background-color: var(--gameboy-red);
+        border-radius: 50%;
+        margin-top: -50px;
+        margin-left: -15px;
+        box-shadow: inset 5px 5px 5px #c3568b;
+      }
+
+      /*  SYSTEM BUTTONS */
+      #system-buttons {
+        display: flex;
+        /*   position: relative; */
+        top: -65px;
+        left: 80px;
+      }
+
+      .system_button {
+        padding: 8px;
+        margin: 5px;
+        transform: rotate(330deg);
+        font-family: 'Cabin';
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      .system_button::before {
+        position: absolute;
+        content: '';
+        height: 10px;
+        width: 45px;
+        background-color: var(--gameboy-dark-gray);
+        border-radius: 25px;
+        margin-top: -13px;
+        margin-left: -7px;
+      }
+
+      /* SPEAKER */
+      #speaker {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 6px;
+        transform: rotate(330deg);
+        /*   position: relative; */
+        top: -45px;
+        left: 10px;
+      }
+
+      #speaker > div {
+        height: 60px;
+        width: 7px;
+        border-radius: 5px;
+        background-color: var(--gameboy-dark-gray);
+        box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <!--   Gameboy Body   -->
+      <div id="gameboy">
+        <div id="screen-container">
+          <!--     Gameboy Screen   -->
+          <div id="header__stripes"></div>
+          <div id="header__screen-text">dot matrix with stereo sound</div>
+
+          <div id="screen-battery">battery</div>
+          <div id="screen-display"></div>
+
+          <!--    LOGO    -->
+          <div id="console-title">
+            <img
+              alt="”Nintendo"
+              Logo
+              from
+              1967”
+              src="https://1000logos.net/wp-content/uploads/2017/03/Nintendo-Logo-1967.png"
+            />
+            <span id="gameboy-text">GAME BOY™</span>
+          </div>
+
+          <!--    DPAD    -->
+          <div id="dpad">
+            <div class="dpad__button" id="dpad__top"></div>
+            <div class="dpad__button" id="dpad__left"></div>
+            <div class="dpad__button" id="dpad__center"></div>
+            <div class="dpad__button" id="dpad__right"></div>
+            <div class="dpad__button" id="dpad__bottom"></div>
+          </div>
+
+          <!--    Play Buttons    -->
+          <div id="play-buttons">
+            <div class="play__button">A</div>
+            <div class="play__button">B</div>
+          </div>
+
+          <!-- System Buttons -->
+          <div id="system-buttons">
+            <div class="system_button">select</div>
+            <div class="system_button">start</div>
+          </div>
+
+          <!--     SPEAKER   -->
+          <div id="speaker">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </body>
+</html>

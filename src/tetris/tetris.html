@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris Pixel Art</title>
+
+    <style>
+      :root {
+        --background: #173889;
+        --red: #ee4f63;
+        --cyan: #2ce1ea;
+        --yellow: #f8da37;
+        --purple: #b069f7;
+      }
+
+      /* Vertically and horizontally center all items on the page */
+      body {
+        margin: 10px;
+        background-color: var(--background);
+        zoom: 125%;
+      }
+
+      div {
+        width: 45px;
+        height: 45px;
+        box-shadow: 
+          /*     Row 1 */ 
+          250px 0 var(--red),
+          /*    Row 2  */ 
+          200px 50px var(--red), 250px 50px var(--red),
+          /*    Row 3  */ 
+          50px 100px var(--yellow), 100px 100px var(--yellow), 200px 100px var(--red), 
+          /*   Row 4   */ 
+          50px 150px var(--yellow), 100px 150px var(--yellow), 150px 150px var(--red), 250px 150px var(--purple), 
+          /*   Row 5   */ 
+          50px 200px var(--red), 100px 200px var(--red), 150px 200px var(--red), 200px 200px 0 var(--cyan), 250px 200px var(--purple), 300px 200px 0 var(--purple), 
+          /*   Row 6   */ 
+          50px 250px var(--yellow), 100px 250px var(--cyan), 150px 250px var(--cyan), 200px 250px var(--cyan), 250px 250px var(--purple), 300px 250px var(--cyan);
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

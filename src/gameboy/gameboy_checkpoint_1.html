@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gameboy - Checkpoint #1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Global variables */
+      :root {
+        --gameboy-light-gray: #cdcdcd;
+        --gameboy-dark-gray: #706a7f;
+        --gameboy-red: #7e194f;
+        --gameboy-black: #0e0223;
+
+        --font-size-small: 8px;
+        --font-size-medium: 12px;
+      }
+
+      /* Vertically and horizontally center all items on the page */
+      body {
+        margin: 0 auto;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #gameboy {
+        height: 500px;
+        width: 325px;
+        background-color: var(--gameboy-light-gray);
+        border-radius: 10px 10px 80px 10px;
+      }
+
+      #gameboy * {
+        position: relative;
+      }
+
+      #screen-container {
+        height: 205px;
+        width: 270px;
+        background-color: var(--gameboy-dark-gray);
+        top: 40px;
+        left: 27px;
+        border-radius: 5px 5px 40px 5px;
+      }
+
+      /* SCREEN HEADER */
+      #header__stripes::before {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 250px;
+        left: 10px;
+        top: 7px;
+        border-top: 3px solid var(--gameboy-red);
+        border-bottom: 3px solid var(--gameboy-black);
+      }
+
+      #header__stripes::after {
+        position: absolute;
+        content: '';
+        height: 20px;
+        width: 150px;
+        left: 83px;
+        background-color: var(--gameboy-dark-gray);
+      }
+
+      #header__screen-text {
+        top: 7px;
+        left: 90px;
+        font-size: 8px;
+        font-family: sans-serif;
+        color: white;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <!--   Gameboy Body   -->
+      <div id="gameboy">
+        <div id="screen-container">
+          <div id="header__stripes"></div>
+          <div id="header__screen-text">dot matrix with stereo sound</div>
+        </div>
+      </div>
+    </body>
+  </body>
+</html>
